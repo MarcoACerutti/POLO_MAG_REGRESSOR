@@ -7,14 +7,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
 
-def build_linear_regressors(X,Y, test_size = 0.2, random_state = 42):
+def build_linear_regressors(x_train,
+                            x_test,
+                            y_train,
+                            y_test):
 
 
-    # splitting the data
-    x_train, x_test, y_train, y_test = train_test_split(X, 
-                                                        Y,
-                                                        test_size = test_size,
-                                                        random_state = random_state)
+
 
     # creating an object of LinearRegression class
     LR   = LinearRegression() # LR is the regressor for: dataset vars -> predicted vars
@@ -28,5 +27,5 @@ def build_linear_regressors(X,Y, test_size = 0.2, random_state = 42):
 
     LR_2.fit(y_train,y_prediction_train)
 
-    return LR , LR_2 , (x_train, x_test, y_train, y_test)
+    return LR , LR_2
 
